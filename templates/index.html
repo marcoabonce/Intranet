@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Banner -->
+{% include 'snippets/index/banner/home.html' %}
+<!-- About -->
+{% include 'snippets/index/about/part2.html' %}
+<!-- Frases -->
+{% include 'snippets/index/phrases/frases.html' %}
+<!-- Servicios -->
+{% include 'snippets/index/services/servicios.html' %}
+<!-- Procesos -->
+{% include 'snippets/index/process/procesos.html' %}
+<script src="/static/js/particles.js"></script>
+<script>
+    var sleeping = false;
+    var slideIndex = 0;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n - 1);
+    }
+    function despertar() {
+        sleeping = false;
+        showSlides(slideIndex)
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        if (sleeping == false) {
+            setTimeout(despertar, 5000);
+            sleeping = true;
+        }
+    }
+</script>
+<script>
+    var a = 0;
+    showFrases();
+    function showFrases() {
+        var i;
+        var frases = document.getElementsByClassName("frase");
+        if (a > frases.length) { a = 1 }
+        if (a < 0) { a = frases.length - 1 }
+        for (i = 0; i < frases.length; i++) {
+            frases[i].style.display = "none";
+        }
+        a++;
+        if (a > frases.length) { a = 1 }
+        frases[a - 1].style.display = "block";
+        setTimeout(showFrases, 5000);
+    }
+</script>
+<script>
+    let animaciones = document.querySelectorAll(".aparicion");
+    function mostrar() {
+        let scrollTop = document.documentElement.scrollTop;
+        for (let i = 0; i < animaciones.length; i++) {
+            let alturaElemento = animaciones[i].offsetTop;
+            if (alturaElemento - (window.innerHeight / 6) * 5 < scrollTop) {
+                if (i % 2 != 0) {
+                    animaciones[i].classList.add("right-aparition")
+                }
+                else {
+                    animaciones[i].classList.add("left-aparition")
+                }
+            }
+        }
+    }
+    window.addEventListener('scroll', mostrar);
+</script>
+{% endblock %}

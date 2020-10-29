@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section ban">
+    <canvas id="canvas1"></canvas>
+    <div class="content">
+        <div class="text-center">
+            <div class="h3-title">
+                <h3 class="text-white">
+                    nosotros
+                </h3>
+            </div>
+        </div>
+        <div class="mxw800p">
+            <p class="text-white text text-center">Con más de 26 años de experiencia sabemos que cada cliente es <span
+                    class="text-active">único</span>. El éxito de
+                cada solución parte de la creación de una estrategia <span class="text-active">adaptada</span> a las
+                necesidades específicas y objetivos
+                de cada uno.
+            </p>
+        </div>
+    </div>
+</section>
+{% include 'snippets/about/mision-vision copy.html' %}
+<section class="black">
+    <div class="content">
+        <div class="title">
+            <div class="h3-title">
+                <h3 class="text-white">
+                    Nuestros valores
+                </h3>
+            </div>
+        </div>
+        <div class="boxes">
+            <div class="box aparicion" id="valores">
+                <span class="fas fa-users-cog"></span>
+                <h3 class="h3-hight">Evolución</h3>
+                <p>Conforme su negocio crece y evoluciona, inevitablemente su estrategia en tecnologías de la
+                    información debe de evolucionar a la par.
+                </p>
+            </div>
+            <div class="box aparicion" id="valores">
+                <span class="fas fa-tachometer-alt"></span>
+                <h3 class="h3-hight">Optimización</h3>
+                <p>Ahorro en costos de inversión y gastos de operación, mejorando el rendimiento de los presupuestos de
+                    IT.</p>
+            </div>
+            <div class="box aparicion" id="valores">
+                <span class="fas fa-brain"></span>
+                <h3 class="h3-hight">Innovación</h3>
+                <p>Con alto talento e innovación, proveemos soluciones que permitan ayudar a los sectores de la
+                    sociedad, convirtiendo a nuestros clientes en líderes. </p>
+            </div>
+            <div class="box aparicion" id="valores">
+                <span class="fas fa-users"></span>
+                <h3 class="h3-hight">Lealtad </h3>
+                <p>Somos un socio de negocios comprometido y un proveedor flexible. Contamos con un excelente grupo de
+                    profesionales preparados y con la más amplia experiencia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/static/js/particles.js"></script>
+<script>
+    let animaciones = document.querySelectorAll(".aparicion");
+    function mostrar() {
+        let scrollTop = document.documentElement.scrollTop;
+        for (let i = 0; i < animaciones.length; i++) {
+            let alturaElemento = animaciones[i].offsetTop;
+            if (alturaElemento - (window.innerHeight / 6) * 5 < scrollTop) {
+                if (i % 2 != 0) {
+                    animaciones[i].classList.add("right-aparition")
+                }
+                else {
+                    animaciones[i].classList.add("left-aparition")
+                }
+            }
+        }
+    }
+    window.addEventListener('scroll', mostrar);
+</script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% url 'intranet:login' as login %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% if request.path == login %}<link rel="stylesheet" href="/static/css/login.css">{% endif %}
+</head>
+<body>
+    {% include 'messages.html' %}
+    {% block content %}
+    
+    {% endblock %}
+</body>
+<script src="https://kit.fontawesome.com/289f4fb4f4.js" crossorigin="anonymous"></script>
+</html>

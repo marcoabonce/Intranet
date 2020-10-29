@@ -1,0 +1,10 @@
+{% if messages %}
+<script src="/static/js/notiflix.js"></script>
+  {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <script>Notiflix.Notify.Success('{{ message }}');</script>
+    {% else %}
+    <script>Notiflix.Notify.Failure('{{ message }}');</script>
+    {% endif %}
+  {% endfor %}
+{%  endif %}

@@ -1,0 +1,132 @@
+.container .contacto {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  #canvas1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+  .contacto h2{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: 60px;
+  }
+  .contacto form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+  }
+.contacto .row100{
+    position: relative;
+    width: 100%;
+    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .contacto .row100 .col{
+    position: relative;
+    width: 100%;
+    margin: 30px;
+    transition: 0.5s;
+  }
+  .contacto .row100 .inputBox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 10px;
+    color: #e74c3c;
+  }
+  .contacto .row100 .inputBox input, .contacto .row100 .inputBox.textarea textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    z-index: 1;
+    color: black;
+    margin-left: 7px;
+  }
+  .contacto .row100 .inputBox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  .contacto .row100 .inputBox input:focus + .text,.contacto .row100 .inputBox input:valid + .text{
+    top: -35px;
+    left: -10px;
+  }
+  .contacto .row100 .inputBox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(37, 108, 129, 0.671);
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .contacto .row100 .inputBox input:focus ~ .line,.contacto .row100 .inputBox input:valid ~ .line{
+    height: 100%;
+  }
+  .contacto .row100 .inputBox.textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+  .contacto .row100 .inputBox.textarea textarea{
+    height: 100%;
+    resize: none;
+  }
+  .contacto .row100 .inputBox.textarea textarea:focus + .text,.contacto .row100 .inputBox.textarea textarea:valid + .text{
+    top: -35px;
+    left: -10px;
+  }
+  .contacto .row100 .inputBox textarea:focus ~ .line,.contacto .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+  }
+  .contacto .enviar{
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #e74c3c;
+    color: black;
+    font-size: 18px;
+    border-radius: 2px;
+  }
+  .ban{
+    background-image: linear-gradient(rgb(61, 61, 61),rgb(0, 0, 0)),url('/static/images/Contact.webp');
+  }
+
+  @media (max-width: 992px)
+{
+    .row100
+  {
+    flex-direction: column;
+  }
+  .contactForm .row100 .inputBx50,
+  .contactForm .row100 .inputBx100
+  {
+    width: 100%;
+    margin: 0;
+  }
+}

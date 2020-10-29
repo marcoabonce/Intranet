@@ -1,0 +1,51 @@
+<form method="POST">
+    {% csrf_token %}
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox">
+                {{ form.nombre }}
+                <span class="text">Nombre: </span>
+                <span class="line"> </span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="inputBox">
+                {{ form.apellido }}
+                <span class="text">Apellido Paterno: </span>
+                <span class="line"> </span>
+            </div>
+        </div>
+    </div>
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox">
+                {{ form.email }}
+                <span class="text">Email: </span>
+                <span class="line"> </span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="inputBox">
+                {{ form.telefono }}
+                <span class="text">Telefono: </span>
+                <span class="line"> </span>
+            </div>
+        </div>
+    </div>
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox textarea">
+                {{ form.mensaje }}
+                <span class="text">Deja tu mensaje: </span>
+                <span class="line"> </span>
+            </div>
+        </div>
+    </div>
+    <div class="row100">
+        <div class="col">
+            <center>
+                <input type="submit" value="Enviar" class="enviar">
+            </center>
+        </div>
+    </div>
+</form>

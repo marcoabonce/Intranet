@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient( rgb(8, 54, 68), rgb(8, 54, 68)), url(/static/intranet/imagenes/PIC_TPT005-296x296.jpg);
+    background-blend-mode: multiply;
+}
+
+header{
+    margin: 1em;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.col{
+    text-align: center;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+}
+
+.btn-menu{
+    display: none;  
+}
+
+.top-menu ul{
+    text-decoration: none;
+    position: absolute;
+    font-weight: 100;
+    padding: .5em;
+    right: 10px;
+    top: 20px;
+    display: flex;
+}
+
+.top-menu ul li a{
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav ul {
+    display: flex;
+    border-bottom: rgba(255, 255, 255, 0.11) solid 2px;
+}
+
+li {
+    list-style: none;
+    font-weight: 100;
+}
+
+nav ul li.active{
+    border-bottom: solid rgb(240, 240, 240) 1px;
+}
+
+nav ul li a{
+    margin: 0 17px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.saludo h1{
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.text-white{
+    color: white;
+}
+
+.add{
+    color: rgba(255, 255, 255, 0.562) !important;
+    font-size: 23px;
+    display: grid;
+}
+
+
+nav ul li:hover {
+    border-bottom: solid rgb(240, 240, 240) 1px;
+    transition: .5s;
+}
+
+.w800p{
+    max-width: 800px;
+    position: relative;
+}
+
+.w600p{
+    max-width: 600px;
+    position: relative;
+}
+
+.modules{
+    margin: 4em 0;
+}
+
+.modules ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}
+
+ul li.module{
+    margin: 5px;
+    padding: 35px 25px;
+    background: rgba(64, 224, 208, 0.212);
+}
+
+.messages{
+    background: rgba(13, 119, 136, 0.438);
+    padding: 40px 25px;
+    border-radius: .7em;
+    margin: 25px 0;
+}
+
+.content{
+    width: 100%;
+}
+
+.text-active{
+    font-weight: 350;
+    color: #e74c3c!important;
+}
+
+p.text{
+    font-size: 1em;
+	font-weight: 200;
+	letter-spacing: 1px
+}
+
+.dot{
+    margin: 1em 0;
+    width: 45%;
+    padding: 1em;
+    background: rgba(64, 224, 208, 0.212);
+    color: white;
+    cursor: pointer;
+    border-radius: .5em;
+}
+
+.dot.left{
+    left: 10px;
+    position: absolute;
+}
+
+.dot.right{
+    right: 10px;
+    position: absolute;
+}
+
+.left-aparition {
+	opacity: 1;
+	animation: left-aparition 1.5s;
+	transition: .5s
+}
+
+.right-aparition {
+	opacity: 1;
+	animation: right-aparition 1.5s;
+	transition: .5s
+}
+
+@keyframes left-aparition {
+	0% {
+		transform: translateX(-60px)
+	}
+	100% {
+		transform: translateX(0)
+	}
+}
+
+@keyframes right-aparition {
+	0% {
+		transform: translateX(60px)
+	}
+	100% {
+		transform: translateX(0)
+	}
+}
+
+@keyframes menu-aparition {
+	0% {
+		transform: translateX(-100vw)
+	}
+	100% {
+		transform: translateX(0)
+	}
+}
+
+@keyframes menu-disaparition {
+	0% {
+		transform: translateX(0)
+	}
+	100% {
+		transform: translateX(-100vw)
+	}
+}
+
+@media (max-width:992px) {
+    header{
+        padding: 55px 35px;
+        position: fixed;
+        transition: 1s;
+        visibility: hidden;
+        top: 0;
+        animation: menu-disaparition 1s;
+        left: 0;
+        height: 100vh;
+        z-index: 1;
+        background: black;
+        margin: 0;
+        width: 100vw;
+    }
+
+    header.active{
+        opacity: 1;
+        transition: 0.5s;
+        visibility: visible;
+        animation: menu-aparition 1s;
+    }
+
+    header ul {
+        display: block;
+        border: none;
+    }
+
+    header ul li{
+        margin: 30px;
+        font-size: 1.5em;
+    }
+
+    .btn-menu{
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        font-size: 1.5em;  
+        display: block;
+        z-index: 2;
+        cursor: pointer;
+    }
+    .container{
+        margin: 25px 0;
+    }
+
+    .add{
+        font-size: 1.7em;
+    }
+}
+

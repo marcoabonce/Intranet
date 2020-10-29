@@ -1,0 +1,11 @@
+{% url 'index' as index %}
+{% url 'about' as about %}
+{% url 'services' as services %}
+{% url 'contact' as contact %}
+
+<ul>
+    <li><a href="{% url 'index' %}" class="{% if request.path == index %}text-active{% endif %}" onclick="toggle()">Home</a></li>
+    <li><a href="{% url 'about' %}" class="{% if request.path == about %}text-active{% endif %}" onclick="toggle()">About</a></li>
+    <li><a href="{% url 'services' %}" class="{% if request.path == services %}text-active{% endif %}" onclick="toggle()">Services</a></li>
+    <li><a href="{% url 'contact' %}" class="{% if request.path == contact %}text-active{% endif %}" onclick="toggle()">Contact</a></li>
+</ul>

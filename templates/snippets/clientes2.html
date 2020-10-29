@@ -1,0 +1,35 @@
+<div class="container">
+    <section class="customer-logos slider">
+       <div class="slide client-slide"><img src="/static/images/FCA.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/Imss.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/liconsa.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/FCA.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/Imss.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/liconsa.webp"></div>
+       <div class="slide client-slide"><img src="/static/images/liconsa.webp"></div>
+    </section>
+ </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+    });
+  </script>

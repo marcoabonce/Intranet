@@ -1,0 +1,39 @@
+{% url 'index' as index %}
+
+<section class="servicios">
+        <div class="divs-center">
+            {% if request.path == index %}
+            <div class="bg1"></div>
+            {% else %}
+            <div class="bg3"></div>
+            {% endif %}
+            <div class="bg2"></div>
+        </div>
+        <div class="content">
+            <div class="h3-title">
+                {% if request.path == index %}
+                <h3 class="text-white text-center">Algunos de Nuestros Servicios</h3>
+                {% else %}
+                <h3 class="text-white text-center">Servicios</h3>
+                {% endif %}
+
+            </div>
+            <div class="boxes">
+                <div class="box" id="servicios">
+                    <span class="fas fa-award"></span>
+                    <h3 class="h3-hight">Consultoría</h3>
+                    <p>Especialistas en TI para sectores, gobierno, financiero, automotriz. Diseño de Soluciones, Administración de Proyectos PMO, Implantación de Sistemas, ERP, SAP, ORACLE, Microsoft, Desarrollo de Software.</p>
+                </div>
+                <div class="box" id="servicios">
+                    <span class="fas fa-trophy"></span>
+                    <h3 class="h3-hight">Fábrica de Software</h3>
+                    <p>Atención de requerimientos, nuevas funcionalidades, mantenimiento correctivo , perfectivo y adaptativo de sus sistemas de información, en ambientes IBM mainframe, Unix/Linux y Web.</p>
+                </div>
+                <div class="box" id="servicios">
+                    <span class="fas fa-object-group"></span>
+                    <h3 class="h3-hight">Diseño WEB</h3>
+                    <p>Diseño de páginas Web multidispositivos, para desktop, smartphones y tablets. Diseño gráfico e imagen de identidad corporativa.</p>
+                </div>
+            </div>
+        </div>
+</section>

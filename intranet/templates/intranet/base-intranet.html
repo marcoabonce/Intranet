@@ -1,0 +1,76 @@
+{% url 'intranet:index' as index %}
+{% url 'intranet:category' as category %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>TSC | Tecnología en Sistemas De Cómputo</title>
+    <link rel="stylesheet" href="/static/intranet/css/style.css">
+</head>
+
+<body>
+    {% include 'messages.html' %}
+
+    <div class="btn-menu" onclick="toggle(1)">
+        <span class="fas fa-bars text-white menu"></span>
+    </div>
+    
+    <div class="row top-menu">
+        <ul>
+            <li>
+                <a href="{% url 'intranet:logout' %}" class="text-white"><span class="far fa-envelope"></span>
+                    Mensajes</a>
+            </li>
+            <li>
+                <a href="{% url 'intranet:logout' %}" class="text-white"><span class="fas fa-sign-out-alt"></span>
+                    Cerrar sesión</a>
+            </li>
+        </ul>
+    </div>
+    <header id="header">
+        <div class="row saludo">
+            <h1 class="text-white">{{ saludo }} {{ user }}</h1>
+        </div>
+        <div class="row category">
+            <nav>
+                <ul>
+                    <li class="{% if request.path == index %}active{% endif %}"><a href="{% url 'intranet:index' %}"
+                            class="text-white">Inicio</a></li>
+                    <li class="{% if request.path == category %}active{% endif %}"><a
+                            href="{% url 'intranet:category' %}" class="text-white">Empleados</a></li>
+                    <li class="{% if request.path == category %}active{% endif %}"><a
+                            href="{% url 'intranet:category' %}" class="text-white">Categoria 2</a></li>
+                    <li class="{% if request.path == add %}active{% endif %}"><a href="{% url 'intranet:category' %}"
+                            class="add"><span class="fas fa-plus-circle"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="row container">
+        {% block content %}
+
+    {% endblock %}
+    </div>
+    
+    <div class="row footer">
+        <div class="row">
+            <img src="/static/images/tsc_logo.webp" alt="TSC" width="100px">
+        </div>
+        <div class="row">
+            <p class="text-white text">Todos los derechos reservados</p>
+        </div>
+    </div>
+</body>
+<script>
+    function toggle(value){
+        menu = document.getElementById("header");
+        menu.classList.toggle("active");
+    }  
+</script>
+<script src="https://kit.fontawesome.com/289f4fb4f4.js" crossorigin="anonymous"></script>
+
+</html>

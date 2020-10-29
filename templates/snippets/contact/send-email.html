@@ -1,0 +1,23 @@
+<div class="contactForm">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row100">
+            <div class="inputBx50">
+                <input type="text" name="" placeholder="Nombre">
+            </div>
+            <div class="inputBx50">
+                <input type="text" name="" placeholder="Email">
+            </div>
+        </div>
+        <div class="row100">
+            <div class="inputBx100">
+                <textarea placeholder="Mensaje"></textarea>
+            </div>
+        </div>
+        <div class="row100">
+            <div class="inputBx100">
+                <input type="submit" name="" value="Enviar">
+            </div>
+        </div>
+    </form>
+</div>

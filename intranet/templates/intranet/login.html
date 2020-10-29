@@ -1,0 +1,43 @@
+{% extends 'intranet/base.html' %}
+{% block content %}
+<section class="section bg1">
+    <div class="login">
+        <form method="POST">
+            <div class="row100">
+                <div class="col">
+                    <center>
+                        <img src="/static/images/tsc_logo.webp" alt="" width="150">
+                    </center>
+                </div>
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <div class="inputBox">
+                        {% csrf_token %}
+                        <input type="email" name="email" maxlength="40" minlength="10" required placeholder=" ">
+                        <span class="text">Email: </span>
+                        <span class="line"> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <div class="inputBox">
+                        <input type="password" name="password" required placeholder=" ">
+                        <span class="text">Contraseña: </span>
+                        <span class="line"> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <center>
+                        <input type="submit" value="Iniciar" class="enviar">
+                    </center>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</section>
+{% endblock %}

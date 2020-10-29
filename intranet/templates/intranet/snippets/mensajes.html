@@ -1,0 +1,66 @@
+<section class="sec">
+    <div class="row ">
+        <div class="w600p">
+            <div class="row">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-active row">
+                            Mensajes de TSC
+                        </h2>
+                    </div>
+                </div>
+                <div class="messages row">
+                    <div class="col">
+                        {% for mensaje in mensajes %}
+                    <div class="mensaje">
+                        <div class="row title">
+                            <h3 class="text-active">
+                                {{ mensaje.title }}
+                            </h3>
+                        </div>
+                        <div class="row message">
+                            <p class="text text-white">
+                                {{ mensaje.mensaje }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="dot left" onclick="slide_mensaje(-1)">
+                    <span class="fas fa-chevron-left"></span>
+                </div>
+                <div class="dot right" onclick="slide_mensaje(1)">
+                    <span class="fas fa-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+</section>
+<script>
+    mensajes = document.getElementsByClassName('mensaje')
+    var index_mensaje = 0;
+    slide_mensaje(0)
+    function slide_mensaje(value) {
+        index_mensaje += value;
+        if (index_mensaje > mensajes.length - 1) {
+            index_mensaje = 0;
+        }
+        if (index_mensaje < 0) {
+            index_mensaje = mensajes.length - 1;
+        }
+        for (let index = 0; index < mensajes.length; index++) {
+            mensajes[index].style.display = "none";
+            mensajes[index].classList.remove("left-aparition")
+            mensajes[index].classList.remove("right-aparition")
+        }
+        mensajes[index_mensaje].style.display = "block";
+        if (value == 1) {
+            mensajes[index_mensaje].className += " left-aparition";
+        } else {
+            mensajes[index_mensaje].className += " right-aparition";
+        }
+
+    }  
+</script>
